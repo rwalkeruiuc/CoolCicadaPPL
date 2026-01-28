@@ -1,38 +1,75 @@
-# Workout Tracker (SwiftUI)
+# Workout Tracker (Swift + SwiftUI)
 
-A lightweight SwiftUI workout tracking app focused on clarity, structure, and extensibility.  
-Workouts are modeled cleanly, views are separated by responsibility, and history is treated as a first-class concept rather than an afterthought.
-
-<p align="center">
-  <img src="images/main-screen.png" width="350">
-</p>
+A workout tracking app built in Swift with SwiftUI for the interface.  
+Track workouts, log exercises with sets, reps, and weight, and view your workout history.
 
 ---
 
 ## Overview
 
-The app allows users to create workouts, add exercises with sets/reps/weight, and view past workout history.  
-Workouts can be predefined, custom-built, or persisted as historical records tied to a specific date.
-
-The internal model is intentionally simple: workouts own exercises, and views reflect that hierarchy directly.
+Workout Tracker lets users manage and log their training sessions in a simple, intuitive interface.  
+- Start workouts with pre-defined templates or create custom routines.  
+- Log exercises with sets, reps, and weight.  
+- Track performance over time with a dedicated workout history.  
 
 <p align="center">
-  <img src="images/workout-flow.png" width="600">
+  <img src="images/home-page.png" width="350" alt="Home Page">
 </p>
 
 ---
 
-## Data Model
+## Workouts
 
-### Exercise
+The app comes with three primary workout types:
 
-An `Exercise` represents a single movement within a workout. Reps are stored as a string to allow flexible formats (e.g. `8–10`, `AMRAP`, `30s`).
+- **Push** – exercises targeting chest, shoulders, and triceps.  
+- **Pull** – exercises targeting back, biceps, and rear delts.  
+- **Legs** – exercises targeting quadriceps, hamstrings, glutes, and calves.  
 
-```swift
-struct Exercise: Identifiable {
-    var id: UUID
-    var name: String
-    var sets: Int
-    var reps: String
-    var weight: Int
-}
+Users can also create custom workouts combining exercises from these categories.
+
+---
+
+## Inside a Push Workout
+
+When selecting a Push workout, users can:
+
+- View all exercises in the routine  
+- Log sets, reps, and weights for each exercise  
+- Track progress during the session  
+
+<p align="center">
+  <img src="images/push-workout.png" width="350" alt="Inside a Push Workout">
+</p>
+
+---
+
+## Workout History View
+
+Completed workouts are automatically saved to history.  
+The Workout History view allows users to:
+
+- Browse past workouts by date  
+- See workout types and summaries at a glance  
+- Quickly select any past session for details  
+
+<p align="center">
+  <img src="images/workout-history.png" width="350" alt="Workout History Page">
+</p>
+
+---
+
+## Inside a Past Workout
+
+Selecting a historical workout opens the Workout Details view for that session. Users can:
+
+- Inspect all exercises logged during that session  
+- Review sets, reps, and weights  
+- Track progress and compare performances over time  
+
+<p align="center">
+  <img src="images/workout-history-details.png" width="350" alt="Workout History Details">
+</p>
+
+---
+
